@@ -9,6 +9,7 @@ class Assignment(models.Model):
     name = models.TextField(max_length=100),
     date = models.DateField(auto_now_add=True)
     form = models.CharField(max_length=40)
+    file = models.FileField(upload_to='assignment/', default='assignment/default.pdf')
     
     
     def __str__(self):

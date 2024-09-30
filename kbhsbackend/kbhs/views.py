@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.shortcuts import redirect
 from . serializers import *
 from . models import *
 
@@ -47,3 +48,14 @@ def delete_assignment(request, id):
     if request.method == 'DELETE':
         assignment.delete()
         return Response({"message": "Assignment deleted successfully"})
+    
+@api_view(['GET'])
+def redirect_to_nairobi(request):
+  
+    latitude = '-1.286389'
+    longitude = '36.817223'
+
+    maps_url = f"https://www.google.com/maps/search/?api=1&query={latitude},{longitude}"
+
+    return redirect(maps_url)    
+    

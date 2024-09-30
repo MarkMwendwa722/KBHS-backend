@@ -12,5 +12,6 @@ class Assignment(models.Model):
     file = models.FileField(upload_to='assignment/', default='assignment/default.pdf')
     
     
+    
     def __str__(self):
         return f"{self.id} - {self.form}"

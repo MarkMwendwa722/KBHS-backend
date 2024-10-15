@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+#change to specific location
 from .views import redirect_to_nairobi
 
 urlpatterns =[

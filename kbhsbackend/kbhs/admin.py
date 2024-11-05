@@ -5,13 +5,13 @@ from . models import *
 @admin.register(Admissions)
 class AdmissionsAdmin(admin.ModelAdmin):
     list_display=('name','admission_number','form','date_of_admission')
-    list_filter=('form')
+    list_filter=('form',)
     search_fields=('name','admission_number')
     
 @admin.register(Assignment)
 class AssignmentAdmin(admin.ModelAdmin):
     list_display=('id','name','date','form','file')
-    list_filter=('form')
+    list_filter=('form',)
     search_fields=('name','admission_number')
     
 @admin.register(ContactUs)
@@ -25,6 +25,3 @@ class ContactUsAdmin(admin.ModelAdmin):
         return False
     def has_delete_permission(self, request, obj=None):
         return False
-
-admin.site.register(Assignment)
-admin.site.register(Admissions)
